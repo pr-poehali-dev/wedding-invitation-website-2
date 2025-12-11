@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -89,6 +90,7 @@ const Countdown = () => {
 
 export default function Index() {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     guests: '',
@@ -120,6 +122,17 @@ export default function Index() {
       />
 
       <div className="relative z-10">
+        <div className="fixed top-4 right-4 z-50">
+          <Button
+            onClick={() => navigate('/guests')}
+            className="bg-white/90 hover:bg-white text-primary shadow-lg backdrop-blur-sm"
+            size="lg"
+          >
+            <Icon name="Users" size={20} className="mr-2" />
+            Список гостей
+          </Button>
+        </div>
+
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center max-w-4xl mx-auto space-y-8 animate-float">
             <div className="space-y-4">
