@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Получение списка гостей",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "guests": "array",
+        "total_responses": "number",
+        "total_guests_count": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS для CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}

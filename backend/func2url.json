@@ -1,3 +1,4 @@
 {
+  "get-guests": "https://functions.poehali.dev/f171397e-115b-4cc1-a5fa-4a37650e7a28",
   "send-rsvp": "https://functions.poehali.dev/c5c8efee-c2dc-4e7c-af35-9f28f6e58042"
 }

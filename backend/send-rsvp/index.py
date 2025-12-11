@@ -1,6 +1,7 @@
 import json
 import smtplib
 import os
+import psycopg2
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from typing import Dict, Any
@@ -47,6 +48,19 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     body_data = json.loads(event.get('body', '{}'))
     rsvp = RSVPRequest(**body_data)
+    
+    # Сохраняем в базу данных
+    database_url = os.environ.get('DATABASE_URL')
+    if database_url:
+        conn = psycopg2.connect(database_url)
+        cur = conn.cursor()
+        cur.execute(
+            "INSERT INTO guests (name, guests_count, email, message) VALUES (%s, %s, %s, %s)",
+            (rsvp.name, rsvp.guests, rsvp.email, rsvp.message)
+        )
+        conn.commit()
+        cur.close()
+        conn.close()
     
     # Получаем настройки email из переменных окружения
     smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
