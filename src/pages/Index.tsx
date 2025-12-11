@@ -43,7 +43,7 @@ const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const weddingDate = new Date('2025-02-14T15:00:00').getTime();
+    const weddingDate = new Date('2026-01-08T11:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -125,7 +125,7 @@ export default function Index() {
             <div className="space-y-4">
               <div className="text-6xl mb-6">❄️</div>
               <h1 className="text-7xl md:text-8xl font-light text-primary tracking-wide">
-                Яна & Дмитрий
+                Яна & Роман
               </h1>
               <div className="w-32 h-0.5 bg-primary/30 mx-auto my-8"></div>
               <p className="text-2xl md:text-3xl text-muted-foreground font-light">
@@ -140,14 +140,14 @@ export default function Index() {
               <div className="flex items-center justify-center gap-3 text-primary">
                 <Icon name="Calendar" size={32} />
                 <p className="text-3xl md:text-4xl font-light">
-                  14 февраля 2025
+                  8 января 2026
                 </p>
               </div>
               
               <div className="flex items-center justify-center gap-3 text-muted-foreground">
                 <Icon name="Clock" size={24} />
                 <p className="text-xl md:text-2xl font-light">
-                  15:00
+                  11:00
                 </p>
               </div>
 
@@ -281,9 +281,9 @@ export default function Index() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-2">
-                  <p className="text-xl font-medium">15:00</p>
+                  <p className="text-xl font-medium">11:00</p>
                   <p className="text-muted-foreground">
-                    Официальная церемония бракосочетания в зимнем саду усадьбы
+                    Церемония в зале бракосочетаний Управления ЗАГС Администрации г. Ижевска
                   </p>
                 </CardContent>
               </Card>
@@ -296,9 +296,9 @@ export default function Index() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-2">
-                  <p className="text-xl font-medium">16:00</p>
+                  <p className="text-xl font-medium">12:00</p>
                   <p className="text-muted-foreground">
-                    Совместная фотосессия в заснеженном парке усадьбы
+                    Заснеженная Набережная г. Ижевска
                   </p>
                 </CardContent>
               </Card>
@@ -311,9 +311,9 @@ export default function Index() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-2">
-                  <p className="text-xl font-medium">17:00</p>
+                  <p className="text-xl font-medium">15:00</p>
                   <p className="text-muted-foreground">
-                    Праздничный ужин, поздравления и танцы до утра
+                    Праздничный ужин, баня на дровах, сибирский чан, караоке, поздравления и танцы до утра в семейном кругу
                   </p>
                 </CardContent>
               </Card>
@@ -327,7 +327,7 @@ export default function Index() {
               Подтверждение
             </h2>
             <p className="text-center text-xl text-muted-foreground mb-12">
-              Пожалуйста, подтвердите ваше присутствие до 1 февраля
+              Пожалуйста, подтвердите ваше присутствие до 31 декабря 2025
             </p>
             
             <Card className="bg-white/80 backdrop-blur-sm border-primary/20 shadow-2xl">
@@ -410,11 +410,11 @@ export default function Index() {
         <footer className="py-12 text-center bg-white/40 backdrop-blur-sm">
           <div className="space-y-4">
             <p className="text-2xl text-primary font-light">
-              С любовью, Яна & Дмитрий
+              С любовью, Яна & Роман
             </p>
             <div className="text-4xl">💙</div>
             <p className="text-muted-foreground">
-              По вопросам: +7 (999) 123-45-67
+              По вопросам: +7 (912) 020-48-11
             </p>
           </div>
         </footer>
