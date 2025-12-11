@@ -315,6 +315,12 @@ export default function Index() {
                   <p className="text-muted-foreground">
                     Праздничный ужин, баня на дровах, сибирский чан, караоке, поздравления и танцы до утра в семейном кругу
                   </p>
+                  <div className="flex items-start justify-center gap-2 text-muted-foreground/80 mt-4 pt-4 border-t border-primary/10">
+                    <Icon name="MapPin" size={18} className="mt-0.5 flex-shrink-0" />
+                    <p className="text-sm">
+                      д. Болгуры, ул. Полевая, 13
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </div>
