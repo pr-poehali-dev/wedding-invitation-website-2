@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Успешная отправка RSVP",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "guests": 2,
+        "email": "test@example.com",
+        "message": "С удовольствием приду!"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS для CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
