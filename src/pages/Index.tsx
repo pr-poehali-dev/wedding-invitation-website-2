@@ -125,7 +125,7 @@ export default function Index() {
             <div className="space-y-4">
               <div className="text-6xl mb-6">❄️</div>
               <h1 className="text-7xl md:text-8xl font-light text-primary tracking-wide">
-                Анна & Дмитрий
+                Яна & Дмитрий
               </h1>
               <div className="w-32 h-0.5 bg-primary/30 mx-auto my-8"></div>
               <p className="text-2xl md:text-3xl text-muted-foreground font-light">
@@ -155,10 +155,10 @@ export default function Index() {
                 <Icon name="MapPin" size={24} className="mt-1" />
                 <div className="text-left">
                   <p className="text-xl md:text-2xl font-light">
-                    Усадьба "Зимний сад"
+                    г. Ижевск
                   </p>
                   <p className="text-lg text-muted-foreground/80">
-                    Московская область, д. Снегири
+                    ул. Удмуртская, 196
                   </p>
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function Index() {
               Как добраться
             </h2>
             <p className="text-center text-xl text-muted-foreground mb-12">
-              Усадьба "Зимний сад" находится в живописном месте Подмосковья
+              Место проведения находится в центре города Ижевска
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -192,16 +192,16 @@ export default function Index() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-muted-foreground">
-                    Из Москвы по Новорижскому шоссе (М9), 45 км от МКАД
+                    Адрес: г. Ижевск, ул. Удмуртская, 196
                   </p>
                   <p className="text-muted-foreground">
-                    Поворот на деревню Снегири, далее следуйте указателям "Усадьба Зимний сад"
+                    Удобный подъезд с центральных улиц города
                   </p>
                   <p className="font-medium text-foreground mt-4">
-                    Время в пути: ~1 час
+                    Бесплатная парковка для гостей
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Бесплатная парковка для гостей
+                    Рекомендуем использовать навигатор для точного маршрута
                   </p>
                 </CardContent>
               </Card>
@@ -217,20 +217,20 @@ export default function Index() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-muted-foreground">
-                    Электричка с Рижского вокзала до станции "Снегири"
+                    Троллейбусы №1, 4, 12 — остановка "Удмуртская"
                   </p>
                   <p className="text-muted-foreground">
-                    От станции — автобус №28 или такси (5 минут)
+                    Автобусы №23, 30 — остановка "Удмуртская"
                   </p>
-                  <p className="font-medium text-foreground mt-4">
-                    Время в пути: ~1.5 часа
+                  <p className="text-muted-foreground">
+                    Такси до центра города — 10-15 минут
                   </p>
                   <div className="bg-accent/30 rounded-lg p-3 mt-4">
                     <p className="text-sm font-medium text-foreground">
-                      💡 Организуем трансфер от станции
+                      💡 Нужна помощь с трансфером?
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Укажите в форме ответа, если нужна помощь с трансфером
+                      Укажите в форме ответа, и мы поможем организовать
                     </p>
                   </div>
                 </CardContent>
@@ -252,7 +252,7 @@ export default function Index() {
                 <div className="mt-4 text-center">
                   <p className="text-muted-foreground mb-2">Адрес:</p>
                   <p className="text-lg font-medium text-foreground">
-                    Московская область, Истринский район, д. Снегири, ул. Центральная, 15
+                    г. Ижевск, ул. Удмуртская, 196
                   </p>
                   <Button variant="outline" className="mt-4" asChild>
                     <a href="https://yandex.ru/maps" target="_blank" rel="noopener noreferrer">
@@ -410,7 +410,7 @@ export default function Index() {
         <footer className="py-12 text-center bg-white/40 backdrop-blur-sm">
           <div className="space-y-4">
             <p className="text-2xl text-primary font-light">
-              С любовью, Анна & Дмитрий
+              С любовью, Яна & Дмитрий
             </p>
             <div className="text-4xl">💙</div>
             <p className="text-muted-foreground">
