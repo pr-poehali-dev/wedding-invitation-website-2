@@ -39,6 +39,54 @@ const Snowflakes = () => {
   );
 };
 
+const Countdown = () => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const weddingDate = new Date('2025-02-14T15:00:00').getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="grid grid-cols-4 gap-4 md:gap-6 mt-8">
+      <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg">
+        <div className="text-4xl md:text-5xl font-light text-primary">{timeLeft.days}</div>
+        <div className="text-sm md:text-base text-muted-foreground mt-2">дней</div>
+      </div>
+      <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg">
+        <div className="text-4xl md:text-5xl font-light text-primary">{timeLeft.hours}</div>
+        <div className="text-sm md:text-base text-muted-foreground mt-2">часов</div>
+      </div>
+      <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg">
+        <div className="text-4xl md:text-5xl font-light text-primary">{timeLeft.minutes}</div>
+        <div className="text-sm md:text-base text-muted-foreground mt-2">минут</div>
+      </div>
+      <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg">
+        <div className="text-4xl md:text-5xl font-light text-primary">{timeLeft.seconds}</div>
+        <div className="text-sm md:text-base text-muted-foreground mt-2">секунд</div>
+      </div>
+    </div>
+  );
+};
+
 export default function Index() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -114,7 +162,107 @@ export default function Index() {
                   </p>
                 </div>
               </div>
+
+              <div className="pt-6 border-t border-primary/20">
+                <p className="text-xl text-muted-foreground mb-4">До свадьбы осталось:</p>
+                <Countdown />
+              </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl text-center mb-8 text-primary font-light">
+              Как добраться
+            </h2>
+            <p className="text-center text-xl text-muted-foreground mb-12">
+              Усадьба "Зимний сад" находится в живописном месте Подмосковья
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="bg-white/80 backdrop-blur-sm border-primary/20">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Car" size={28} className="text-primary" />
+                    <CardTitle className="text-2xl text-primary font-light">
+                      На автомобиле
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-muted-foreground">
+                    Из Москвы по Новорижскому шоссе (М9), 45 км от МКАД
+                  </p>
+                  <p className="text-muted-foreground">
+                    Поворот на деревню Снегири, далее следуйте указателям "Усадьба Зимний сад"
+                  </p>
+                  <p className="font-medium text-foreground mt-4">
+                    Время в пути: ~1 час
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Бесплатная парковка для гостей
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/80 backdrop-blur-sm border-primary/20">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Bus" size={28} className="text-primary" />
+                    <CardTitle className="text-2xl text-primary font-light">
+                      На общественном транспорте
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-muted-foreground">
+                    Электричка с Рижского вокзала до станции "Снегири"
+                  </p>
+                  <p className="text-muted-foreground">
+                    От станции — автобус №28 или такси (5 минут)
+                  </p>
+                  <p className="font-medium text-foreground mt-4">
+                    Время в пути: ~1.5 часа
+                  </p>
+                  <div className="bg-accent/30 rounded-lg p-3 mt-4">
+                    <p className="text-sm font-medium text-foreground">
+                      💡 Организуем трансфер от станции
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Укажите в форме ответа, если нужна помощь с трансфером
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="mt-8 bg-white/80 backdrop-blur-sm border-primary/20">
+              <CardContent className="pt-6">
+                <div className="aspect-video w-full bg-muted rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A1234567890&source=constructor"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    title="Карта проезда"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="mt-4 text-center">
+                  <p className="text-muted-foreground mb-2">Адрес:</p>
+                  <p className="text-lg font-medium text-foreground">
+                    Московская область, Истринский район, д. Снегири, ул. Центральная, 15
+                  </p>
+                  <Button variant="outline" className="mt-4" asChild>
+                    <a href="https://yandex.ru/maps" target="_blank" rel="noopener noreferrer">
+                      <Icon name="Navigation" size={18} className="mr-2" />
+                      Построить маршрут
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
